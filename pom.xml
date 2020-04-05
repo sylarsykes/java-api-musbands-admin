@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>org.sylrsykssoft</groupId>
+	<artifactId>java-api-musbands-admin</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>java-api-musbands-admin</name>
+	<description>Musbands Admin it is an API Rest with the administration of the master entities for Musbands API Rest.</description>
+	<url>https://github.com/sylarsykes/java-api-musbands-admin</url>
+	
+	<developers>
+		<developer>
+			<id>${developer.id}</id>
+			<name>Juan Gonzalez Fernandez</name>
+			<email>${developer.email}</email>
+			<url>https://github.com/sylarsykes</url>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/sylarsykes/coreapi-framework</url>
+		<connection>https://github.com/sylarsykes/coreapi-framework.git</connection>
+		<developerConnection>ps://github.com/sylarsykes</developerConnection>
+	</scm>
+
+	<properties>
+		<!-- Common -->
+		<developer.id>juan.gonzalez.fernandez.jgf</developer.id>
+		<developer.email>juan.gonzalez.fernandez.jgf@outlook.com</developer.email>
+		<main.basedir>${basedir}</main.basedir>
+		<java.version>11</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<maven.compiler.source>${java.version}</maven.compiler.source>
+    	<maven.compiler.target>${java.version}</maven.compiler.target>
+    	<maven.compiler.release>${java.version}</maven.compiler.release>
+		
+		<!-- Core API Dependencies -->
+		<coreapi-framework.library.version>0.0.1-SNAPSHOT</coreapi-framework.library.version>
+		<coreapi-framework.swagger.version>0.0.1-SNAPSHOT</coreapi-framework.swagger.version>
+		<coreapi-framework.api.version>0.0.1-SNAPSHOT</coreapi-framework.api.version>
+		<coreapi-framework.audit.version>0.0.1-SNAPSHOT</coreapi-framework.audit.version>
+		<coreapi-framework.database.version>0.0.1-SNAPSHOT</coreapi-framework.database.version>
+		<coreapi-framework.service.version>0.0.1-SNAPSHOT</coreapi-framework.service.version>
+		<coreapi-framework.web.version>0.0.1-SNAPSHOT</coreapi-framework.web.version>
+		<coreapi-framework.mail.version>0.0.1-SNAPSHOT</coreapi-framework.mail.version>
+
+		<!-- Musbands Admin Dependencies -->
+	    <java-api-musbands.admin.function-member.version>${project.version}</java-api-musbands.admin.function-member.version>
+	    <java-musbands.admin.instrument.version>${project.version}</java-musbands.admin.instrument.version>
+	    <java-musbands.admin.musical-genre.version>${project.version}</java-musbands.admin.musical-genre.version>
+	    <java-musbands.admin.client.version>${project.version}</java-musbands.admin.client.version>
+	    <java-api-musbands.admin.application.version>${project.version}</java-api-musbands.admin.application.version>
+		
+		<!-- 3rd Library Dependencies -->
+		<mariadb.version>2.6.0</mariadb.version>
+		<modelmapper-spring.version>2.3.7</modelmapper-spring.version>
+		<commons-collections4.version>4.4</commons-collections4.version>
+	    <commons-lang3.version>3.9</commons-lang3.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		
+		<dependency>
+	  		<groupId>org.springframework.boot</groupId>
+	  		<artifactId>spring-boot-configuration-processor</artifactId>
+	  		<optional>true</optional>
+	  	</dependency>
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		<!-- Configure lombok in your IDE -->
+		<!-- https://www.baeldung.com/lombok-ide -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		</dependency>
+	
+	  	<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-data-jpa</artifactId>
+	    </dependency>
+	  	
+	  	<dependency>
+	   		<groupId>org.mariadb.jdbc</groupId>
+	   		<artifactId>mariadb-java-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+	  	
+	  	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+	  	
+	  	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+			<dependency>
+		<groupId>org.modelmapper.extensions</groupId>
+		<artifactId>modelmapper-spring</artifactId>
+		<version>${modelmapper-spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.apache.commons</groupId>
+    	<artifactId>commons-collections4</artifactId>
+    	<version>${commons-collections4.version}</version>
+	</dependency>
+
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-test</artifactId>
+		  <scope>test</scope>
+		  <exclusions>
+			<exclusion>
+				<groupId>org.junit.vintage</groupId>
+				<artifactId>junit-vintage-engine</artifactId>
+			</exclusion>
+		  </exclusions>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+  <modules>
+    <module>java-api-musbands-admin-application</module>
+    <module>java-api-musbands-admin-function-members</module>
+  </modules>
+</project>

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Title: java-api-musbands-admin-application
+Implementation-Version: 0.0.1-SNAPSHOT
+Build-Jdk-Spec: 1.8
+Created-By: Maven Integration for Eclipse
+Main-Class: org.java.api.musbands.admin.application.MusbandsAdminApiAp
+ plication
+
