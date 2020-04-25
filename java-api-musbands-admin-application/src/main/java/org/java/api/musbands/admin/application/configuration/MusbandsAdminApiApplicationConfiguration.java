@@ -7,8 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 /**
- * @author Juan
- *
+ * Default configuration
+ * 
+ * @author juan.gonzalez.fernandez.jgf
  */
 @Configuration
 @ComponentScan({ "org.java.api.musbands.admin.function.members.*" })
@@ -16,7 +17,8 @@ public class MusbandsAdminApiApplicationConfiguration {
 
 	/**
 	 * Model mapper bean
-	 * @return
+	 * 
+	 * @return ModelMapper
 	 */
 	@Bean
 	@Scope("prototype")

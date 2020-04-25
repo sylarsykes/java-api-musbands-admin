@@ -15,4 +15,6 @@ module musbands.api.admin.function.members {
 	requires modelmapper;
 	requires spring.boot.autoconfigure;
 	requires spring.context;
+	requires java.validation;
+	requires org.apache.tomcat.embed.core;
 }
