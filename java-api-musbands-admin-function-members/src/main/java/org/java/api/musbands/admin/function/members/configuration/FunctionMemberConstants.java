@@ -15,12 +15,13 @@ public final class FunctionMemberConstants {
 	public static final String CONTROLLER_REQUEST_NAME = "functionMembers";
 	public static final String CONTROLLER_NAME = "functionMemberController";
 	public static final String FIND_ALL_CONTROLLER_NAME = "findAllFunctionMemberController";
+	public static final String FIND_BY_CONTROLLER_NAME = "findByFunctionMemberController";
 	public static final String CREATE_CONTROLLER_NAME = "createFunctionMemberController";
 
 	// CONTROLLER PATH //
 	public static final String CONTROLLER_REQUEST_MAPPING = "${spring.data.rest.base-path}/" + CONTROLLER_REQUEST_NAME;
 	public static final String CONTROLLER_GET_FIND_BY_ID = "/findOne/id/{id}";
-	public static final String CONTROLLER_GET_FIND_BY_NAME_MAPPING = "/findOne/name/{name}";
+	public static final String CONTROLLER_GET_FIND_BY_NAME = "/findOne/name/{name}";
 	public static final String CONTROLLER_GET_FIND_BY_EXAMPLE = "/findOne/example";
 	public static final String CONTROLLER_GET_FIND_ALL_BY_EXAMPLE = "/findAll/example";
 	public static final String CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE = "/findAll/example/sort";
@@ -59,7 +60,8 @@ public final class FunctionMemberConstants {
 	public static final String MAILTO_BUILDER_NAME = "functionMemberMailTOBuilder";
 
 	// SERVICE //
-	public static final String SERVICE_NAME = "functionMemberService";
+	public static final String FIND_ALL_SERVICE_NAME = "findAllFunctionMemberService";
+	public static final String FIND_BY_SERVICE_NAME = "findByFunctionMemberService";
 	public static final String SERVICE_AUDIT_NAME = "functionMemberAuditService";
 	public static final String SERVICE_SIMPLE_NAME = "functionMemberSimpleService";
 
