@@ -12,9 +12,6 @@ import org.springframework.data.domain.Example;
  * 
  * @author juan.gonzalez.fernandez.jgf
  *
- * @param <T> Type of class.
- * @param <R> Resourse of class.
- * @param <N> Class of identifier.
  */
 public interface IFindByFunctionMemberService {
 

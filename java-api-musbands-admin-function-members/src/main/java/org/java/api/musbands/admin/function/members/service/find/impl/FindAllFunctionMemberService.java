@@ -1,5 +1,7 @@
 package org.java.api.musbands.admin.function.members.service.find.impl;
 
+import static org.java.api.musbands.admin.function.members.configuration.FunctionMemberConstants.FIND_ALL_SERVICE_NAME;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,12 +16,14 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 /**
- * Find all function member services
+ * Implementation of the services of IFindAllFunctionMemberService
+ * 
+ * @see IFindAllFunctionMemberService
  * 
  * @author juan.gonzalez.fernandez.jgf
  *
  */
-@Service("findAllFunctionMemberService")
+@Service(FIND_ALL_SERVICE_NAME)
 public class FindAllFunctionMemberService implements IFindAllFunctionMemberService {
 
 	@Autowired	
@@ -27,6 +31,31 @@ public class FindAllFunctionMemberService implements IFindAllFunctionMemberServi
 	
 	@Autowired
 	private ModelMapper modelMapper;
+
+	
+	/**
+	 * Map entity to model
+	 * 
+	 * @param source
+	 * 		Entity object
+	 * 
+	 * @return FunctionMemberModel
+	 */
+	private FunctionMemberModel mapperToModel(final FunctionMember source) {
+		return modelMapper.map(source, FunctionMemberModel.class);
+	}
+	
+	/**
+	 * Map model to entity
+	 * 
+	 * @param source
+	 * 		Model object
+	 * 
+	 * @return FunctionMember
+	 */
+	private FunctionMember mapperToEntity(final FunctionMemberModel source) {
+		return modelMapper.map(source, FunctionMember.class);
+	}
 	
 	/**
 	 * {@inheritDoc}
@@ -36,7 +65,7 @@ public class FindAllFunctionMemberService implements IFindAllFunctionMemberServi
 		final List<FunctionMember> sources = functionMemberRepository.findAll();
 		
 		return sources.stream().map((FunctionMember source) -> {
-			return modelMapper.map(source, FunctionMemberModel.class);
+			return mapperToModel(source);
 		}).collect(Collectors.toList());
 	}
 
@@ -44,9 +73,15 @@ public class FindAllFunctionMemberService implements IFindAllFunctionMemberServi
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <F extends Example<FunctionMemberModel>> List<FunctionMemberModel> findAllByExample(F example) {
-		// TODO Auto-generated method stub
-		return null;
+	public <F extends Example<FunctionMemberModel>> List<FunctionMemberModel> findAllByExample(final F example) {
+		final FunctionMember entity = mapperToEntity(example.getProbe());
+		final Example<FunctionMember> exampleToFind = Example.of(entity, example.getMatcher());
+
+		final List<FunctionMember> sources = functionMemberRepository.findAll(exampleToFind);
+		
+		return sources.stream().map((FunctionMember source) -> {
+			return mapperToModel(source);
+		}).collect(Collectors.toList());
 	}
 
 	/**
@@ -54,8 +89,14 @@ public class FindAllFunctionMemberService implements IFindAllFunctionMemberServi
 	 */
 	@Override
 	public <F extends Example<FunctionMemberModel>> List<FunctionMemberModel> findAllByExampleSortable(F example, Sort sort) {
-		// TODO Auto-generated method stub
-		return null;
+		final FunctionMember entity = mapperToEntity(example.getProbe());
+		final Example<FunctionMember> exampleToFind = Example.of(entity, example.getMatcher());
+
+		final List<FunctionMember> sources = functionMemberRepository.findAll(exampleToFind, sort);
+		
+		return sources.stream().map((FunctionMember source) -> {
+			return mapperToModel(source);
+		}).collect(Collectors.toList());
 	}
 
 	/**
@@ -63,8 +104,12 @@ public class FindAllFunctionMemberService implements IFindAllFunctionMemberServi
 	 */
 	@Override
 	public List<FunctionMemberModel> findAllById(Iterable<Integer> ids) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		final List<FunctionMember> sources = functionMemberRepository.findAllById(ids);
+		
+		return sources.stream().map((FunctionMember source) -> {
+			return mapperToModel(source);
+		}).collect(Collectors.toList());
 	}
 
 }
