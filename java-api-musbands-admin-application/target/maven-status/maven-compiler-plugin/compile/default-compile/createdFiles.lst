@@ -1,0 +1,4 @@
+org\java\api\musbands\admin\application\configuration\MusbandsAdminApiApplicationDatabaseConfiguration.class
+org\java\api\musbands\admin\application\configuration\MusbandsAdminApiApplicationCorsFilter.class
+org\java\api\musbands\admin\application\MusbandsAdminApiApplication.class
+org\java\api\musbands\admin\application\configuration\MusbandsAdminApiApplicationConfiguration.class
